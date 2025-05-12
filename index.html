@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LayerEdge Flash Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: #f0f6fc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #161b22;
+      border: 2px solid #30363d;
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #238636;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2ea043;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h2>Did You Know?</h2>
+    <p id="fact">LayerEdge uses Zero-Knowledge Proofs to protect your privacy while proving data validity.</p>
+    <button onclick="nextFact()">Next</button>
+  </div>
+
+  <script>
+    const facts = [
+      "LayerEdge uses Zero-Knowledge Proofs to protect your privacy while proving data validity.",
+      "LayerEdge can bring smart contracts to Bitcoin using BitVM — no need to change Bitcoin.",
+      "Proof of Humanity ensures airdrops go to real people, not bots.",
+      "LayerEdge combines Bitcoin's security with Ethereum's programmability via rollups.",
+      "Airdrop eligibility requires verified identity — no bots allowed!",
+      "LayerEdge bridges Web3 scalability and Bitcoin's decentralization — a unique combo in crypto."
+    ];
+
+    let index = 0;
+    function nextFact() {
+      index = (index + 1) % facts.length;
+      document.getElementById("fact").innerText = facts[index];
+    }
+  </script>
+</body>
+</html>
